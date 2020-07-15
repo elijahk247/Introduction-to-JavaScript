@@ -99,13 +99,41 @@ console.log(dogFeeder(15,1));
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
-function RPS(play) {
 
+/*
+function RPS(play) {
+    // generates a random number between 0-2 and uses that to get computer played rps
+    let computer = assignComputer(Math.floor(Math.random() * 3));       
+
+    return results(play.toLowerCase(), computer);
 }
 
+function assignComputer(num) {
+    let computer = '';
+    if (num === 0) {
+        computer = 'rock';
+    } else if (num === 1) {
+        computer = 'paper';
+    } else {
+        computer = 'scissors';
+    }
 
-  
-  
+    return computer;
+}
+
+function results(play, computer) {
+    if ((play === 'scissors' && computer === 'paper') || (play === 'paper' && computer === 'rock') || 
+        (play === 'rock' && computer === 'scissors')) {
+            return 'You win!';
+    } else if (play === computer) {
+        return 'You tied!';
+    } else {
+        return 'You lost!';
+    }
+}
+
+console.log(RPS('scissors')); */
+    
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
@@ -115,6 +143,8 @@ function kmToMiles(km) {
     return km * 1.60934;
 }
 
+console.log(kmToMiles(5));
+
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
@@ -122,6 +152,8 @@ function kmToMiles(km) {
 function feetToCM(feet) {
     return (feet * 12) * 2.54;
 }
+
+console.log(feetToCM(6));
 
 
 
@@ -131,12 +163,17 @@ function feetToCM(feet) {
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
   
 function annoyingSong(num) {
+    let annoying = ""
     for(let i = num; i > 0; i--) {
-        holder = num.toString();
-        return holder + " number of soda on the wall, " + holder + "bottles of soda, take one down pass it around, " + (i - 1).toString() + "bottles of soda on the wall";
+        holder = i.toString();
+
+        annoying += `${holder} bottles of soda on the wall, ${holder} bottles of soda, take one down pass it around, ${(i - 1).toString()} bottles of soda on the wall! `;
     }
+
+    return annoying;
 }
 
+console.log(annoyingSong(5));
 
 
 /************************************************************** Task 7 **************************************************************/
@@ -162,9 +199,9 @@ function gradeCalculator(grade) {
     }
 }
   
-
-  
-  
+console.log(gradeCalculator(95));
+console.log(gradeCalculator(75));
+console.log(gradeCalculator(45));
 
 /************************************************************** Stretch **************************************************************/
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
@@ -188,14 +225,47 @@ function isVowel(character) {
     return character === 'a' || character === 'e' || character === 'i' || character == 'o' || character === 'u';
 }
 
-
+console.log(countVowels("orange"));
 
 
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
 
+function RPS() {
+    //take answer from console
+    //console.log("Lets play RPS");
+    let play = prompt("Lets play RPS!");
 
+    // generates a random number between 0-2 and uses that to get computer played rps
+    let computer = assignComputer(Math.floor(Math.random() * 3));       
+
+    return results(play.toLowerCase(), computer);
+}
+
+function assignComputer(num) {
+    let computer = '';
+    if (num === 0) {
+        computer = 'rock';
+    } else if (num === 1) {
+        computer = 'paper';
+    } else {
+        computer = 'scissors';
+    }
+
+    return computer;
+}
+
+function results(play, computer) {
+    if ((play === 'scissors' && computer === 'paper') || (play === 'paper' && computer === 'rock') || 
+        (play === 'rock' && computer === 'scissors')) {
+            return 'You win!';
+    } else if (play === computer) {
+        return 'You tied!';
+    } else {
+        return 'You lost!';
+    }
+}
 
 
 
